@@ -1,4 +1,4 @@
-# EasyWard — Sistema de Gestão do Bispado
+# EasyWard — Sistema de Gestão de Ala
 
 Sistema web modular para apoio à gestão administrativa e operacional de alas da Igreja, com foco em cadastros, frequência, reuniões, tarefas do bispado, entrevistas, limpeza, orçamento, relatórios e automações periódicas.
 
