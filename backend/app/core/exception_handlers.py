@@ -54,8 +54,13 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
     )
     
 async def generic_exception_handler(request: Request, exc: Exception):
-    # registra o erro com structlog e retorna 500
-    structlog.get_logger().error("Erro inesperado", exc_info=True)
+    log = structlog.get_logger()
+    log.error(
+        "unhandled_exception",
+        path=request.url.path,
+        method=request.method,
+        error=str(exc),
+    )
     return JSONResponse(
         status_code=500,
         content=error_response("Erro interno do servidor."),

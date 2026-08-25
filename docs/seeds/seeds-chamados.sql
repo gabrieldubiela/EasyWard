@@ -140,14 +140,47 @@ INSERT INTO chamados (ala_id, nome, tipo, origem, ativo) VALUES
 (:ala_id, 'Secretária das Moças',                             'local', 'global', true),
 (:ala_id, 'Especialista das Moças',                           'local', 'global', true),
 
--- MOÇAS — Classe Young Women 12–18 Presidência
-(:ala_id, 'Presidente da Classe das Moças',                   'local', 'global', true),
-(:ala_id, 'Primeira Conselheira da Classe das Moças',         'local', 'global', true),
-(:ala_id, 'Segunda Conselheira da Classe das Moças',          'local', 'global', true),
-(:ala_id, 'Secretária da Classe das Moças',                   'local', 'global', true),
+-- =========================================================
+-- MOÇAS — Classe Guardiãs da Luz
+-- =========================================================
 
--- MOÇAS — Classe Young Women 12–18 Líderes adultas
-(:ala_id, 'Consultora da Classe das Moças',                   'local', 'global', true),
+-- Presidência da Classe das Guardiãs da Luz
+(:ala_id, 'Presidente da Classe das Guardiãs da Luz',         'local', 'global', true),
+(:ala_id, 'Primeira Conselheira da Classe das Guardiãs da Luz','local', 'global', true),
+(:ala_id, 'Segunda Conselheira da Classe das Guardiãs da Luz','local', 'global', true),
+(:ala_id, 'Secretária da Classe das Guardiãs da Luz',         'local', 'global', true),
+
+-- Líderes adultas — Classe das Guardiãs da Luz
+(:ala_id, 'Consultora da Classe das Guardiãs da Luz',                'local', 'global', true),
+(:ala_id, 'Especialista da Classe das Guardiãs da Luz',             'local', 'global', true),
+
+-- =========================================================
+-- MOÇAS — Classe das Mensageiras da Esperança
+-- =========================================================
+
+-- Presidência da Classe das Mensageiras da Esperança
+(:ala_id, 'Presidente da Classe das Mensageiras da Esperança',         'local', 'global', true),
+(:ala_id, 'Primeira Conselheira da Classe das Mensageiras da Esperança','local', 'global', true),
+(:ala_id, 'Segunda Conselheira da Classe das Mensageiras da Esperança','local', 'global', true),
+(:ala_id, 'Secretária da Classe das Mensageiras da Esperança',         'local', 'global', true),
+
+-- Líderes adultas — Classe das Mensageiras da Esperança
+(:ala_id, 'Consultora da Classe das Mensageiras da Esperança',         'local', 'global', true),
+(:ala_id, 'Especialista da Classe das Mensageiras da Esperança',       'local', 'global', true),
+
+-- =========================================================
+-- MOÇAS — Classe das Edificadoras da Fé
+-- =========================================================
+
+-- Presidência da Classe das Edificadoras da Fé
+(:ala_id, 'Presidente da Classe das Edificadoras da Fé',         'local', 'global', true),
+(:ala_id, 'Primeira Conselheira da Classe das Edificadoras da Fé','local', 'global', true),
+(:ala_id, 'Segunda Conselheira da Classe das Edificadoras da Fé','local', 'global', true),
+(:ala_id, 'Secretária da Classe das Edificadoras da Fé',         'local', 'global', true),
+
+-- Líderes adultas — Classe das Edificadoras da Fé
+(:ala_id, 'Consultora da Classe das Edificadoras da Fé',         'local', 'global', true),
+(:ala_id, 'Especialista da Classe das Edificadoras da Fé',       'local', 'global', true),
 
 -- MOÇAS — Outros chamados
 (:ala_id, 'Especialista das Moças — Atividades',              'local', 'global', true),

@@ -248,7 +248,7 @@ INSERT INTO hinos (ala_id, numero, nome, origem) VALUES
 (NULL, 204, 'Ó Vós, Que Sois Chamados',              'global'),
 
 -- =========================================================
--- DIA DO SENHOR E DIAS DA SEMANA (1001–1062)
+-- DIA DO SENHOR E DIAS DA SEMANA (1001–1072)
 -- Nota: salto intencional de 204 para 1001 no hinário oficial
 -- =========================================================
 (NULL, 1001, 'Ó Senhor de toda bênção',              'global'),
@@ -313,10 +313,20 @@ INSERT INTO hinos (ala_id, numero, nome, origem) VALUES
 (NULL, 1060, 'Uma arca hoje eu construirei',         'global'),
 (NULL, 1061, 'Nosso lar tem amor',                   'global'),
 (NULL, 1062, 'Que meu jejum venhas aceitar',         'global'),
+(NULL, 1063, 'Paz, não temais',                      'global'),
+(NULL, 1064, 'Sempre és fiel, Senhor!',              'global'),
+(NULL, 1065, 'Profetizou Isaías',                    'global'),
+(NULL, 1066, 'O bom combate, combater',              'global'),
+(NULL, 1067, 'É bom viver o evangelho',              'global'),
+(NULL, 1068, 'A Deus seja a glória',                 'global'),
+(NULL, 1069, 'Deus, fala a nós',                     'global'),
+(NULL, 1070, 'O milagre',                            'global'),
+(NULL, 1071, 'É o que ensina o Senhor',              'global'),
+(NULL, 1072, 'Quando relembro a triste cruz',        'global'),
 
 -- =========================================================
 -- PÁSCOA E NATAL (1201–1210)
--- Nota: salto intencional de 1062 para 1201 no hinário oficial
+-- Nota: salto intencional de 1073 para 1201 no hinário oficial
 -- =========================================================
 (NULL, 1201, 'Eis a Páscoa do Senhor',               'global'),
 (NULL, 1202, 'O menino Jesus nasceu',                'global'),
