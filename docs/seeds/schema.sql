@@ -711,8 +711,7 @@ CREATE TABLE system_config (
   value       VARCHAR(255) NOT NULL,
   created_at  TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
   updated_at  TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
-  CONSTRAINT fk_system_config_ala FOREIGN KEY (ala_id) REFERENCES alas(id) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT uk_system_config_ala_key UNIQUE (COALESCE(ala_id, 0), key)
+  CONSTRAINT fk_system_config_ala FOREIGN KEY (ala_id) REFERENCES alas(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TRIGGER trg_updated_at BEFORE UPDATE ON system_config
   FOR EACH ROW EXECUTE FUNCTION set_updated_at();
@@ -809,3 +808,10 @@ INSERT INTO tipos_entrevista (nome) VALUES
 -- Configuração global padrão: ausência prolongada = 2 semanas
 INSERT INTO system_config (ala_id, key, value) VALUES
 (NULL, 'absence_threshold_weeks', '2');
+
+-- =========================================================
+-- SECOND RUN
+-- =========================================================
+
+CREATE UNIQUE INDEX uk_system_config_ala_key 
+ON system_config (COALESCE(ala_id, 0), key);

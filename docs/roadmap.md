@@ -20,17 +20,17 @@ Definir a ordem de desenvolvimento do EasyWard, priorizando o que precisa estar 
 **Meta:** ambiente configurado, banco funcionando, autenticação operacional.
 
 ### Backend
-- [ ] Estrutura de pastas do projeto (conforme `docs/estrutura-pastas.md`)
-- [ ] Configuração do FastAPI com CORS, middleware e exception handlers
-- [ ] Conexão com o banco de dados (SQLAlchemy async + asyncpg)
-- [ ] Aplicação do schema SQL (`docs/schema.sql`)
+- [X] Estrutura de pastas do projeto (conforme `docs/estrutura-pastas.md`)
+- [X] Configuração do FastAPI com CORS, middleware e exception handlers
+- [X] Conexão com o banco de dados (SQLAlchemy async + asyncpg)
+- [X] Aplicação do schema SQL (`docs/schema.sql`)
 - [ ] Aplicação dos seeds globais (`docs/schema.sql` — seção seeds)
 - [ ] Configuração do Alembic para migrações
-- [ ] Endpoint de health check (`GET /api/v1/health`)
+- [X] Endpoint de health check (`GET /api/v1/health`)
 - [ ] Módulo `auth`: login, logout, refresh token
 - [ ] Middleware de autenticação JWT (`get_current_user`)
 - [ ] Sistema de permissões (`require_permission`)
-- [ ] Log estruturado com structlog
+- [X] Log estruturado com structlog
 - [ ] Integração com Sentry
 
 ### Frontend
@@ -45,12 +45,12 @@ Definir a ordem de desenvolvimento do EasyWard, priorizando o que precisa estar 
 - [ ] Design tokens CSS (`docs/design.md`)
 
 ### Infraestrutura
-- [ ] Repositório GitHub criado com estrutura de branches (main, develop)
-- [ ] Deploy automático configurado (Vercel + Render)
-- [ ] Projeto Supabase criado (dev + produção)
+- [X] Repositório GitHub criado com estrutura de branches (main, develop)
+- [X] Deploy automático configurado (Vercel + Render)
+- [X] Projeto Supabase criado (dev + produção)
 - [ ] Variáveis de ambiente configuradas em todos os serviços
 - [ ] UptimeRobot configurado
-- [ ] Template de PR (`.github/PULL_REQUEST_TEMPLATE.md`)
+- [X] Template de PR (`.github/PULL_REQUEST_TEMPLATE.md`)
 
 **Entrega:** sistema no ar, login funcionando, sem nenhuma funcionalidade de negócio.
 

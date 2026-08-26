@@ -29,6 +29,10 @@ class Settings(BaseSettings):
         # retorna True se APP_ENV for "production"
         return self.APP_ENV == "production"
     
+    @property
+    def is_development(self) -> bool:
+        return self.APP_ENV == "development"
+    
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
