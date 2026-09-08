@@ -24,17 +24,17 @@ Definir a ordem de desenvolvimento do EasyWard, priorizando o que precisa estar 
 - [X] Configuração do FastAPI com CORS, middleware e exception handlers
 - [X] Conexão com o banco de dados (SQLAlchemy async + asyncpg)
 - [X] Aplicação do schema SQL (`docs/schema.sql`)
-- [ ] Aplicação dos seeds globais (`docs/schema.sql` — seção seeds)
-- [ ] Configuração do Alembic para migrações
+- [X] Aplicação dos seeds globais (`docs/schema.sql` — seção seeds)
+- [X] Configuração do Alembic para migrações
 - [X] Endpoint de health check (`GET /api/v1/health`)
-- [ ] Módulo `auth`: login, logout, refresh token
-- [ ] Middleware de autenticação JWT (`get_current_user`)
+- [X] Módulo `auth`: login, logout, refresh token
+- [X] Middleware de autenticação JWT (`get_current_user`)
 - [ ] Sistema de permissões (`require_permission`)
 - [X] Log estruturado com structlog
 - [ ] Integração com Sentry
 
 ### Frontend
-- [ ] Estrutura de pastas do projeto (conforme `docs/estrutura-pastas.md`)
+- [X] Estrutura de pastas do projeto (conforme `docs/estrutura-pastas.md`)
 - [ ] Configuração do Vite + TypeScript + React Router
 - [ ] Instância Axios com interceptor de refresh token
 - [ ] Store Zustand de autenticação

@@ -4,6 +4,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError
 from app.modules.health.router import router as health_router
+from app.modules.auth.router import router as auth_router
+from app.modules.geo.router import router as geo_router
 
 from app.core.config import settings
 from app.core.middleware import setup_middlewares
@@ -56,3 +58,5 @@ app.add_exception_handler(RequestValidationError, validation_exception_handler)
 app.add_exception_handler(Exception, generic_exception_handler)
 
 app.include_router(health_router, prefix="/api/v1")
+app.include_router(auth_router, prefix="/api/v1")
+app.include_router(geo_router, prefix="/api/v1")
