@@ -3,13 +3,19 @@ from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import text
 from typing import AsyncGenerator
 import structlog
+import ssl
 
 from app.core.config import settings
 
+ssl_context = ssl.create_default_context()
+ssl_context.check_hostname = False
+ssl_context.verify_mode = ssl.CERT_NONE
+
 engine = create_async_engine(
     settings.DATABASE_URL,
-    echo=settings.is_development,  # mostra as queries SQL no terminal em dev
-    pool_pre_ping=True,            # testa a conexão antes de usar
+    echo=settings.is_development,
+    pool_pre_ping=True,
+    connect_args={"ssl": ssl_context},
 )
 
 AsyncSessionLocal = async_sessionmaker(
@@ -35,7 +41,7 @@ async def check_db_connection() -> bool:
         async with AsyncSessionLocal() as session:
             await session.execute(text("SELECT 1"))
         return True
-    except Exception:
+    except Exception as e:
         log = structlog.get_logger()
         log.error("database.connection_failed", error=str(e))
         return False

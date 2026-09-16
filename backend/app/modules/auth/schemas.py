@@ -1,34 +1,36 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, model_validator
 
 class LoginRequest(BaseModel):
     email: EmailStr
     password: str
-    
+
 class UserResponse(BaseModel):
     id: int
-    name: str        # nome_completo do membro vinculado
+    name: str
     ward_id: int
     permissions: list[str]
-    
+
 class LoginResponse(BaseModel):
     access_token: str
     user: UserResponse
-    
-# Schema para criar nova ala
-class NewWardRequest(BaseModel):
-    # Localização
-    estado_id: int
-    estaca_id: int | None = None   # None se for criar nova estaca
-    estaca_nome: str | None = None # obrigatório se estaca_id for None
-    ala_nome: str
 
-    # Dados do primeiro membro/usuário
+class NewWardRequest(BaseModel):
+    estado_id: int
+    estaca_id: int | None = None
+    estaca_nome: str | None = None
+    ala_nome: str
     nome_completo: str
     email: EmailStr
     password: str
 
+    @model_validator(mode="after")
+    def validate_estaca(self):
+        if self.estaca_id is None and not self.estaca_nome:
+            raise ValueError(
+                "estaca_nome é obrigatório quando estaca_id não é informado."
+            )
+        return self
 
-# Schema para entrar em ala existente
 class ExistingWardRequest(BaseModel):
     ala_id: int
     nome_completo: str

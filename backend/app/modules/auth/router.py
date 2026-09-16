@@ -4,7 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.database import get_db
 from app.core.response import success_response
 from app.core.exceptions import UnauthorizedError
-from app.modules.auth.schemas import LoginRequest, LoginResponse
+from app.modules.auth.schemas import LoginRequest, LoginResponse, NewWardRequest, ExistingWardRequest
 from app.modules.auth import service
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -67,3 +67,68 @@ async def refresh(
         message="Token renovado com sucesso."
     )
 
+@router.post("/register/new-ward")
+async def register_new_ward(
+    request_data: NewWardRequest,
+    response: Response,
+    db: AsyncSession = Depends(get_db),
+):
+    result = await service.register_new_ward(
+        estado_id=request_data.estado_id,
+        estaca_id=request_data.estaca_id,
+        estaca_nome=request_data.estaca_nome,
+        ala_nome=request_data.ala_nome,
+        nome_completo=request_data.nome_completo,
+        email=request_data.email,
+        password=request_data.password,
+        db=db,
+    )
+
+    response.set_cookie(
+        key="refresh_token",
+        value=result["refresh_token"],
+        httponly=True,
+        secure=True,
+        samesite="strict",
+        max_age=60 * 60 * 24 * 7,
+    )
+
+    return success_response(
+        data={
+            "access_token": result["access_token"],
+            "user": result["user"],
+        },
+        message="Ala criada com sucesso!"
+    )
+
+
+@router.post("/register/existing-ward")
+async def register_existing_ward(
+    request_data: ExistingWardRequest,
+    response: Response,
+    db: AsyncSession = Depends(get_db),
+):
+    result = await service.register_existing_ward(
+        ala_id=request_data.ala_id,
+        nome_completo=request_data.nome_completo,
+        email=request_data.email,
+        password=request_data.password,
+        db=db,
+    )
+
+    response.set_cookie(
+        key="refresh_token",
+        value=result["refresh_token"],
+        httponly=True,
+        secure=True,
+        samesite="strict",
+        max_age=60 * 60 * 24 * 7,
+    )
+
+    return success_response(
+        data={
+            "access_token": result["access_token"],
+            "user": result["user"],
+        },
+        message="Conta criada com sucesso!"
+    )

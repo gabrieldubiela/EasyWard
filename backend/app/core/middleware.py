@@ -1,3 +1,4 @@
+import os
 import time
 import structlog
 from fastapi import FastAPI, Request, Response
@@ -21,8 +22,9 @@ def setup_middlewares(app: FastAPI) -> None:
     )
 
     # 2. Rate limiting
-    app.state.limiter = limiter
-    app.add_middleware(SlowAPIMiddleware)
+    if not os.getenv("TESTING"):
+        app.state.limiter = limiter
+        app.add_middleware(SlowAPIMiddleware)
 
     # 3. Headers de segurança + log de requisições
     @app.middleware("http")

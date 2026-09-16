@@ -15,9 +15,11 @@ class Settings(BaseSettings):
     RESEND_FROM_EMAIL: str = "noreply@easyward.app"
     FIREBASE_CREDENTIALS: str = ""
     SENTRY_DSN: str = ""
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+    model_config = {
+    "env_file": ".env",
+    "env_file_encoding": "utf-8",
+    "case_sensitive": True,
+}
         
     @property
     def cors_origins_list(self) -> list[str]:
