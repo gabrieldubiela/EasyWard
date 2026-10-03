@@ -9,34 +9,33 @@ Definir a estrutura técnica do sistema EasyWard, descrevendo camadas, component
 ## 2. Visão em Camadas
 
 ```
-┌─────────────────────────────────────────────┐
-│           APRESENTAÇÃO (Frontend)           │
-│   React + TypeScript + Vite + PWA           │
-│   Vercel Free                               │
-└─────────────────┬───────────────────────────┘
+┌────────────────────────────────────────────────────────────────┐
+│           APRESENTAÇÃO (Frontend)                              │
+│   React + TypeScript + Vite + PWA + Tailwind CSS + shadcn/ui   │
+│   Vercel Free                                                  │
+└─────────────────┬──────────────────────────────────────────────┘
                   │ HTTPS / REST (JSON)
                   │ Authorization: Bearer <access_token>
                   │ Cookie: refresh_token (httpOnly)
-┌─────────────────▼───────────────────────────┐
-│              API (Backend)                  │
-│   Python + FastAPI                          │
-│   JWT, regras de negócio, validação,        │
-│   relatórios, notificações, jobs            │
-│   Render Free                               │
-└──────┬──────────────────────────────────────┘
+┌─────────────────▼──────────────────────────────────────────────┐
+│              API (Backend)                                     │
+│   Python + FastAPI                                             │
+│   JWT, regras de negócio, validação,                           │
+│   relatórios, notificações, jobs                               │
+│   Render Free                                                  │
+└──────┬─────────────────────────────────────────────────────────┘
        │ asyncpg / SQLAlchemy
        │ DATABASE_URL (env var)
-┌──────▼──────────────┐   ┌────────────────────┐
-│  PERSISTÊNCIA       │   │  SERVIÇOS EXTERNOS │
-│  PostgreSQL         │   │  Resend (e-mail)   │
-│  Supabase Free      │   │  FCM (push)        │
-└─────────────────────┘   │  Google Drive      │
-                          │  (backup)          │
-┌─────────────────────┐   └────────────────────┘
-│  AUTOMAÇÃO          │
-│  GitHub Actions     │
-│  (cron → API)       │
-└─────────────────────┘
+┌─────────────────────────────┐    ┌─────────────────────────────┐
+│  PERSISTÊNCIA               │    │  SERVIÇOS EXTERNOS          │
+│  PostgreSQL                 │    │  Resend (e-mail)            │
+│  Supabase Free              │    │  FCM (push)                 │
+└─────────────────────────────┘    │  Google Drive (backup)      │
+┌───────────────────────────────┐ └─────────────────────────────┘
+│  AUTOMAÇÃO                    │
+│  GitHub Actions (cron → API)  │
+│  (cron → API)                 │
+└───────────────────────────────┘
 ```
 
 ---

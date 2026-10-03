@@ -87,6 +87,8 @@ O sistema gerencia **múltiplas alas**. Cada ala é completamente isolada — me
 | Hospedagem frontend | Vercel Free |
 | Hospedagem backend | Render Free |
 | Autenticação | JWT (access token 30min + refresh token 7 dias em cookie httpOnly) |
+| Estilização | Tailwind CSS |
+| Componentes UI | shadcn/ui (copiados para o projeto, customizados com paleta teal) |
 | E-mail | Resend (plano gratuito — 3.000 e-mails/mês) |
 | Notificações push | Firebase Cloud Messaging (FCM) — Spark gratuito |
 | Roteamento (frontend) | React Router v6 |
