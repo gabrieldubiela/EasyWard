@@ -29,27 +29,27 @@ Definir a ordem de desenvolvimento do EasyWard, priorizando o que precisa estar 
 - [X] Endpoint de health check (`GET /api/v1/health`)
 - [X] Módulo `auth`: login, logout, refresh token
 - [X] Middleware de autenticação JWT (`get_current_user`)
-- [ ] Sistema de permissões (`require_permission`)
+- [X] Sistema de permissões (`require_permission`)
 - [X] Log estruturado com structlog
-- [ ] Integração com Sentry
+- [X] Integração com Sentry
 
 ### Frontend
 - [X] Estrutura de pastas do projeto (conforme `docs/estrutura-pastas.md`)
-- [ ] Configuração do Vite + TypeScript + React Router
-- [ ] Instância Axios com interceptor de refresh token
-- [ ] Store Zustand de autenticação
-- [ ] Tela de login
-- [ ] Rota protegida (`PrivateRoute`)
-- [ ] Layout base (AppShell, Sidebar, BottomNav mobile)
-- [ ] Componentes UI base (Button, Input, Modal, Table, Alert, Loader)
-- [ ] Design tokens CSS (`docs/design.md`)
+- [X] Configuração do Vite + TypeScript + React Router
+- [X] Instância Axios com interceptor de refresh token
+- [X] Store Zustand de autenticação
+- [X] Tela de login
+- [X] Rota protegida (`PrivateRoute`)
+- [X] Layout base (AppShell, Sidebar, BottomNav mobile)
+- [X] Componentes UI base (Button, Input, Modal, Table, Alert, Loader)
+- [X] Design tokens CSS (`docs/design.md`)
 
 ### Infraestrutura
 - [X] Repositório GitHub criado com estrutura de branches (main, develop)
 - [X] Deploy automático configurado (Vercel + Render)
 - [X] Projeto Supabase criado (dev + produção)
-- [ ] Variáveis de ambiente configuradas em todos os serviços
-- [ ] UptimeRobot configurado
+- [X] Variáveis de ambiente configuradas em todos os serviços
+- [X] UptimeRobot configurado
 - [X] Template de PR (`.github/PULL_REQUEST_TEMPLATE.md`)
 
 **Entrega:** sistema no ar, login funcionando, sem nenhuma funcionalidade de negócio.

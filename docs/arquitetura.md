@@ -26,12 +26,12 @@ Definir a estrutura técnica do sistema EasyWard, descrevendo camadas, component
 └──────┬─────────────────────────────────────────────────────────┘
        │ asyncpg / SQLAlchemy
        │ DATABASE_URL (env var)
-┌─────────────────────────────┐    ┌─────────────────────────────┐
-│  PERSISTÊNCIA               │    │  SERVIÇOS EXTERNOS          │
-│  PostgreSQL                 │    │  Resend (e-mail)            │
-│  Supabase Free              │    │  FCM (push)                 │
-└─────────────────────────────┘    │  Google Drive (backup)      │
-┌───────────────────────────────┐ └─────────────────────────────┘
+┌───────────────────────────────┐  ┌─────────────────────────────┐
+│  PERSISTÊNCIA                 │  │  SERVIÇOS EXTERNOS          │
+│  PostgreSQL                   │  │  Resend (e-mail)            │
+│  Supabase Free                │  │  FCM (push)                 │
+└───────────────────────────────┘  │  Google Drive (backup)      │
+┌───────────────────────────────┐  └─────────────────────────────┘
 │  AUTOMAÇÃO                    │
 │  GitHub Actions (cron → API)  │
 │  (cron → API)                 │
