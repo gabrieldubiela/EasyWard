@@ -11,7 +11,7 @@ const navItems = [
 
 export default function BottomNav() {
   return (
-    <nav className="h-16 bg-white border-t border-[var(--color-border)] flex items-center justify-around px-2 shrink-0">
+    <nav className="h-16 bg-white border-t border-(--color-border) flex items-center justify-around px-2 shrink-0">
       {navItems.map(({ to, icon: Icon, label }) => (
         <NavLink
           key={to}
@@ -21,8 +21,8 @@ export default function BottomNav() {
             flex flex-col items-center gap-1 px-3 py-1 rounded-lg
             text-xs transition-colors duration-150
             ${isActive
-              ? 'text-[var(--color-primary-600)]'
-              : 'text-[var(--color-gray-500)]'
+              ? 'text-(--color-primary-600)'
+              : 'text-gray-500)'
             }
           `}
         >

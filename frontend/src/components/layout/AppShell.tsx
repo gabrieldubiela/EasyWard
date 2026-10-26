@@ -5,7 +5,7 @@ import BottomNav from './BottomNav'
 
 export default function AppShell() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--color-bg-app)]">
+    <div className="min-h-screen flex flex-col bg-(--color-bg-app)">
       
       {/* Header fixo no topo */}
       <Header />

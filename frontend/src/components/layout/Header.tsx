@@ -9,11 +9,11 @@ export default function Header({ onMenuClick }: HeaderProps) {
   const user = useAuthStore((state) => state.user)
 
   return (
-    <header className="h-14 bg-[var(--color-nav-bg)] text-white flex items-center px-4 shrink-0 gap-4">
+    <header className="h-14 bg-(--color-nav-bg) text-white flex items-center px-4 shrink-0 gap-4">
       
       {/* Botão hambúrguer — só no mobile */}
       <button
-        className="md:hidden p-1 rounded hover:bg-[var(--color-nav-hover)]"
+        className="md:hidden p-1 rounded hover:bg-(--color-nav-hover)"
         onClick={onMenuClick}
       >
         <Menu size={20} />

@@ -14,8 +14,8 @@ export default function Loader({ size = 'md', className = '' }: LoaderProps) {
     <div
       className={`
         ${sizes[size]}
-        border-2 border-[var(--color-gray-200)]
-        border-t-[var(--color-primary-500)]
+        border-2 border-gray-200
+        border-t-(--color-primary-500)
         rounded-full animate-spin
         ${className}
       `}

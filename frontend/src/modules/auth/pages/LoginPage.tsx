@@ -39,15 +39,15 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg-app)]">
+    <div className="min-h-screen flex items-center justify-center bg-(--color-bg-app)">
       <div className="w-full max-w-sm bg-white rounded-lg shadow p-8 flex flex-col gap-6">
 
         {/* Logo */}
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-[var(--color-primary-800)]">
+          <h1 className="text-2xl font-bold text-(--color-primary-800)">
             EasyWard
           </h1>
-          <p className="text-sm text-[var(--color-gray-500)] mt-1">
+          <p className="text-sm text-gray-500 mt-1">
             Gestão de Ala
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-[var(--color-gray-700)]">
+            <label className="text-sm font-medium text-gray-700)">
               E-mail
             </label>
             <Input
@@ -65,14 +65,14 @@ export default function LoginPage() {
               {...register('email')}
             />
             {errors.email && (
-              <span className="text-xs text-[var(--color-danger-600)]">
+              <span className="text-xs text-(--color-danger-600)">
                 {errors.email.message}
               </span>
             )}
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-[var(--color-gray-700)]">
+            <label className="text-sm font-medium text-gray-700">
               Senha
             </label>
             <Input
@@ -81,14 +81,14 @@ export default function LoginPage() {
               {...register('password')}
             />
             {errors.password && (
-              <span className="text-xs text-[var(--color-danger-600)]">
+              <span className="text-xs text-(--color-danger-600)">
                 {errors.password.message}
               </span>
             )}
           </div>
 
           {errors.root && (
-            <span className="text-xs text-[var(--color-danger-600)] text-center">
+            <span className="text-xs text-(--color-danger-600) text-center">
               {errors.root.message}
             </span>
           )}
@@ -100,11 +100,11 @@ export default function LoginPage() {
         </form>
 
         {/* Links */}
-        <div className="text-center text-sm text-[var(--color-gray-500)] flex flex-col gap-1">
-          <a href="/onboarding" className="text-[var(--color-primary-600)] hover:underline">
+        <div className="text-center text-sm text-gray-500 flex flex-col gap-1">
+          <a href="/onboarding" className="text-(--color-primary-600) hover:underline">
             Criar nova ala
           </a>
-          <a href="/onboarding" className="text-[var(--color-primary-600)] hover:underline">
+          <a href="/onboarding" className="text-(--color-primary-600) hover:underline">
             Entrar em ala existente
           </a>
         </div>

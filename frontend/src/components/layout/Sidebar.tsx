@@ -19,7 +19,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <div className="h-full bg-white border-r border-[var(--color-border)] flex flex-col">
+    <div className="h-full bg-white border-r border-(--color-border) flex flex-col">
       <nav className="flex-1 py-4">
         {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink
@@ -30,8 +30,8 @@ export default function Sidebar() {
               flex items-center gap-3 px-4 py-2.5 text-sm
               transition-colors duration-150
               ${isActive
-                ? 'bg-[var(--color-primary-50)] text-[var(--color-primary-600)] font-semibold border-r-2 border-[var(--color-primary-600)]'
-                : 'text-[var(--color-gray-700)] hover:bg-[var(--color-gray-100)]'
+                ? 'bg-(--color-primary-50) text-(--color-primary-600) font-semibold border-r-2 border-(--color-primary-600)'
+                : 'text-gray-700) hover:bg-gray-100)'
               }
             `}
           >
