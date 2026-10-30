@@ -76,7 +76,10 @@ function NovaAlaForm({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit(onSubmit, (errs) => console.log('Erros de validação:', errs))}
+      className="flex flex-col gap-4"
+    >
       <p className="text-sm font-semibold text-gray-700">
         Criar nova ala
       </p>
@@ -86,7 +89,9 @@ function NovaAlaForm({
         <label className="text-sm font-medium text-gray-700">Estado</label>
         <select
           className="h-8 w-full rounded-lg border border-input px-2.5 text-sm"
-          {...register('estado_id', { valueAsNumber: true })}
+          {...register('estado_id', {
+            setValueAs: (v) => (v === '' ? undefined : Number(v)),
+          })}
         >
           <option value="">Selecione...</option>
           {estados.map(e => (
@@ -103,7 +108,9 @@ function NovaAlaForm({
           <>
             <select
               className="h-8 w-full rounded-lg border border-input px-2.5 text-sm"
-              {...register('estaca_id', { valueAsNumber: true })}
+              {...register('estaca_id', {
+                setValueAs: (v) => (v === '' ? undefined : Number(v)),
+              })}
               disabled={!estadoId}
             >
               <option value="">Selecione...</option>
@@ -114,7 +121,10 @@ function NovaAlaForm({
             <button
               type="button"
               className="text-xs text-(--color-primary-600) hover:underline text-left"
-              onClick={() => setNovaEstaca(true)}
+              onClick={() => {
+                setNovaEstaca(true)
+                setValue('estaca_id', undefined)
+              }}
             >
               + Criar nova estaca
             </button>
@@ -125,7 +135,10 @@ function NovaAlaForm({
             <button
               type="button"
               className="text-xs text-(--color-primary-600) hover:underline text-left"
-              onClick={() => setNovaEstaca(false)}
+              onClick={() => {
+                setNovaEstaca(false)
+                setValue('estaca_nome', '')
+              }}
             >
               ← Selecionar estaca existente
             </button>
