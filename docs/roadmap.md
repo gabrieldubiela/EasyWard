@@ -61,11 +61,11 @@ Definir a ordem de desenvolvimento do EasyWard, priorizando o que precisa estar 
 **Meta:** uma ala consegue cadastrar membros, lançar frequência e ver relatório semanal.
 
 ### Onboarding
-- [ ] Endpoint `POST /auth/register/new-ward` (cria ala + membro + usuário)
-- [ ] Endpoint `POST /auth/register/existing-ward` (cria usuário em ala existente)
-- [ ] Seeds por ala ao criar via `ward_seed_service.py` (5 org. principais, 8 org. auxiliares, 113 chamados, 4 grupos de orçamento, config) — `docs/modelo-dados-seed.md` + `docs/seeds-organizacoes.sql` + `docs/seeds-chamados.sql`
-- [ ] Tela de onboarding no frontend (3 passos)
-- [ ] Filtro estado → estaca → ala no onboarding
+- [X] Endpoint `POST /auth/register/new-ward` (cria ala + membro + usuário)
+- [X] Endpoint `POST /auth/register/existing-ward` (cria usuário em ala existente)
+- [X] Seeds por ala ao criar via `ward_seed_service.py` (5 org. principais, 8 org. auxiliares, 113 chamados, 4 grupos de orçamento, config) — `docs/modelo-dados-seed.md` + `docs/seeds-organizacoes.sql` + `docs/seeds-chamados.sql`
+- [X] Tela de onboarding no frontend (3 passos)
+- [X] Filtro estado → estaca → ala no onboarding
 
 ### Estrutura base
 - [ ] CRUD de alas (`GET /wards/me`, `PUT /wards/me`)
